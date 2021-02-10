@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/aviaticket/static/css/main.da46dd84.chunk.css",
-    "main.js": "/aviaticket/static/js/main.9cd381fa.chunk.js",
-    "main.js.map": "/aviaticket/static/js/main.9cd381fa.chunk.js.map",
+    "main.js": "/aviaticket/static/js/main.e22241dc.chunk.js",
+    "main.js.map": "/aviaticket/static/js/main.e22241dc.chunk.js.map",
     "runtime-main.js": "/aviaticket/static/js/runtime-main.3c8ae887.js",
     "runtime-main.js.map": "/aviaticket/static/js/runtime-main.3c8ae887.js.map",
-    "static/js/2.2464b955.chunk.js": "/aviaticket/static/js/2.2464b955.chunk.js",
-    "static/js/2.2464b955.chunk.js.map": "/aviaticket/static/js/2.2464b955.chunk.js.map",
+    "static/js/2.ab435c1d.chunk.js": "/aviaticket/static/js/2.ab435c1d.chunk.js",
+    "static/js/2.ab435c1d.chunk.js.map": "/aviaticket/static/js/2.ab435c1d.chunk.js.map",
     "static/js/3.0bbbaa79.chunk.js": "/aviaticket/static/js/3.0bbbaa79.chunk.js",
     "static/js/3.0bbbaa79.chunk.js.map": "/aviaticket/static/js/3.0bbbaa79.chunk.js.map",
     "index.html": "/aviaticket/index.html",
     "static/css/main.da46dd84.chunk.css.map": "/aviaticket/static/css/main.da46dd84.chunk.css.map",
-    "static/js/2.2464b955.chunk.js.LICENSE.txt": "/aviaticket/static/js/2.2464b955.chunk.js.LICENSE.txt",
+    "static/js/2.ab435c1d.chunk.js.LICENSE.txt": "/aviaticket/static/js/2.ab435c1d.chunk.js.LICENSE.txt",
     "static/media/lotPolish.9a597642.png": "/aviaticket/static/media/lotPolish.9a597642.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3c8ae887.js",
-    "static/js/2.2464b955.chunk.js",
+    "static/js/2.ab435c1d.chunk.js",
     "static/css/main.da46dd84.chunk.css",
-    "static/js/main.9cd381fa.chunk.js"
+    "static/js/main.e22241dc.chunk.js"
   ]
 }
