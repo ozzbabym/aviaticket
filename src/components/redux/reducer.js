@@ -1,13 +1,9 @@
 import ticketJSON from '../../dataJSON/flights.json'
 
-let a = ticketJSON
+let JSON = ticketJSON
 
 const initialState={
-    ticket: a,
-    ticketJSON: ticketJSON,
-    
-
-    
+    ticketJSON: ticketJSON  
 }
 
 
@@ -15,7 +11,7 @@ export const reducerState=(state = initialState, action)=>{
     
     switch(action.type){
         case 'BACK':{
-            return {ticketJSON}
+            return {...state, ticketJSON: JSON}
         }
         case 'PRICE_MORE':{
             return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.map(item=>item).sort((prev,next) =>parseInt(prev.flight.price.total.amount) - parseInt(next.flight.price.total.amount))}}}}
@@ -25,19 +21,19 @@ export const reducerState=(state = initialState, action)=>{
             return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.map(item=>item).sort((prev,next) =>prev.flight.legs[0].duration - next.flight.legs[0].duration)}}}
         }
         case 'NOT_RESEAT':{
-            return {...state, ticketJSON: {result: {flights: state.ticket.result.flights.filter(item=>item.flight.legs[0].segments.length===1 && item.flight.legs[1].segments.length===1 )}}}
+            return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.filter(item=>item.flight.legs[0].segments.length===1 && item.flight.legs[1].segments.length===1 )}}}
         }
         case '1_RESEAT':{
-            return {...state, ticketJSON: {result: {flights: state.ticket.result.flights.filter(item=>((item.flight.legs[0].segments.length===1 || item.flight.legs[1].segments.length===1) && (item.flight.legs[0].segments.length !== item.flight.legs[1].segments.length) ))}}}
+            return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.filter(item=>((item.flight.legs[0].segments.length===1 || item.flight.legs[1].segments.length===1) && (item.flight.legs[0].segments.length !== item.flight.legs[1].segments.length) ))}}}
         }
         case 'FROM_PRICE':{
-            return {...state, ticketJSON: {result: {flights: state.ticket.result.flights.filter(item=>(parseInt(item.flight.price.total.amount) > action.count))}}}
+            return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.filter(item=>(parseInt(item.flight.price.total.amount) > action.count))}}}
         }
         case 'TO_PRICE':{
-            return {...state, ticketJSON: {result: {flights: state.ticket.result.flights.filter(item=>(parseInt(item.flight.price.total.amount) < action.count))}}}
+            return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.filter(item=>(parseInt(item.flight.price.total.amount) < action.count))}}}
         }
         case 'CAPTION':{
-            return {...state, ticketJSON: {result: {flights: state.ticket.result.flights.filter(item=>item.flight.carrier.caption===action.caption)}}}
+            return {...state, ticketJSON: {result: {flights: state.ticketJSON.result.flights.filter(item=>item.flight.carrier.caption===action.caption)}}}
         }
         
         

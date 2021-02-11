@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import './Body.css'
 import lotPolish from '../../images/lotPolish.png'
-import $ from 'jquery'
 import { connect } from 'react-redux'
 
 
@@ -13,7 +12,7 @@ const BodyContainer = (props) => {
 
     //цены по возрастанию
     
-
+    
     
 
     let tabletTicket = flightsRace.map(item => {
@@ -149,15 +148,28 @@ const BodyContainer = (props) => {
     })
 
     
+
+    // Хуки для кнопки ShowMore, но тогда не будут сортироваться весь массив, а только то, что на экране
+
+    // const [count, setCount] = useState(2)
+    // const [arr, setArr] =useState([tabletTicket[0],tabletTicket[1]])
     
+    
+    // const add = () => {
+    //     console.log(count)
+    //     setArr(arr.concat(tabletTicket[count+1]))
+        
+    //     setCount(count+1)
+        
+    // }
     
     
     
     return (
-        <div>
+        <div style={{width: '750px'}}>
 
             {tabletTicket}
-
+            
             <div style={{textAlign: 'center', marginTop: '50px'}}>
                 <button >Показать больше</button>
             </div>

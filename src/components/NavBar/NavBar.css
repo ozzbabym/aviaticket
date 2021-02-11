@@ -1,9 +1,11 @@
 .header{
+    
     background: grey;
     height: 50px;
 }
 
 .body{
+    
     margin-left: 20px;
 }
 
@@ -19,6 +21,7 @@
 }
 
 .footer{
+    
     background: grey;
     height: 100px;
 }

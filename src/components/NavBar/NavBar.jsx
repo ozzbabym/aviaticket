@@ -4,37 +4,39 @@ import './NavBar.css'
 import {changePriceMore, changeTransfer, changeBack,changeFromPrice,changeToPrice,changeCaption} from '../redux/reducer' 
 import ticketJSON from '../../dataJSON/flights.json'
 
+
+
 export const NavBarContainer = (props) =>{
     
     
 
-    const changeRadio=(event)=>{
-        
-        props.changePriceMore(event.target.value)
-        changeCheckbox(event)
-    }
-
-    const changeCheckbox=(event)=>{
-        
-        if(event.target.checked){
-            props.changeTransfer(event.target.value)     
+    const change=()=>{
+        props.changeBack()
+        if(document.getElementById('1').checked){
+            props.changePriceMore('PRICE_MORE')
+        }
+        if(document.getElementById('2').checked){
+            props.changePriceMore('PRICE_LESS')
+        }
+        if(document.getElementById('3').checked){
+            props.changePriceMore('TRANSFER_TIME')
+        }
+        if(document.getElementById('from').checked){
+            props.changeTransfer('1_RESEAT')  
+        }
+        if(document.getElementById('to').checked){
+            props.changeTransfer('NOT_RESEAT') 
         }
         
+        props.changeFromPrice(document.getElementById('fromPrice').value)
         
-        
-        
+        if(document.getElementById('toPrice').value>document.getElementById('fromPrice').value){
+        props.changeToPrice(document.getElementById('toPrice').value)}
         
     }
 
-
-    const fromPrice=(event)=>{
-        
-        props.changeFromPrice(event.target.value)
-    }
-    const toPrice = (event)=>{
-        
-        props.changeToPrice(event.target.value)
-    }
+    
+    
     
 
     const changeCaption=(event)=>{
@@ -50,7 +52,7 @@ export const NavBarContainer = (props) =>{
         return arrCarrierCaption.indexOf(item) == pos;
     })
 
-   
+    
     
 
     return(
@@ -59,7 +61,7 @@ export const NavBarContainer = (props) =>{
 
             </div>
             <div className='body'>
-                <div className='body_container' onChange={changeRadio}>
+                <div className='body_container' onChange={change}>
                     <div>
                         Сортировать
                     </div>
@@ -75,28 +77,28 @@ export const NavBarContainer = (props) =>{
                     </div>
 
                 </div>
-                <div className='body_container' onChange={changeCheckbox}>
+                <div className='body_container' onChange={change}>
                     <div>
                         Фильтровать
                     </div>
                     <div >
-                        <input type='checkbox' value='1_RESEAT'></input> - 1 пересадка
+                        <input id='from' type='checkbox' value='1_RESEAT'></input> - 1 пересадка
                     </div>
                     <div>                  
-                        <input type='checkbox' value='NOT_RESEAT'></input> - без пересадок
+                        <input id='to' type='checkbox' value='NOT_RESEAT'></input> - без пересадок
                     </div>
                     
                 </div>
 
-                <div className='body_container'>
+                <div className='body_container' onChange={change}>
                     <div>
                         Цена
                     </div>
                     <div style={{marginBottom: '20px'}}>
-                        От <input placeholder='0' onChange={fromPrice}></input>
+                        От <input id='fromPrice' placeholder='0' ></input>
                     </div>
                     <div>                  
-                        До <input placeholder='10000' onChange={toPrice}></input>
+                        До <input id='toPrice' placeholder='10000' ></input>
                     </div>
                     
                 </div>
